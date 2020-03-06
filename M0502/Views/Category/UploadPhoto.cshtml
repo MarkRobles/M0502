@@ -1,0 +1,24 @@
+﻿@model M0502.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UploadPhoto</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("UploadPhoto", "Category",FormMethod.Post,new { enctype="multipart/form-data"})) {
+            <input  type="file" name="file"/>
+            /*Controles para leer los demas datos de la categoria*/
+        <input type="submit" value="OK"> 
+        }
+
+    </div>
+</body>
+</html>
