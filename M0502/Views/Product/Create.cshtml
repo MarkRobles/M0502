@@ -14,9 +14,29 @@
 <body>
 
 
-    @using (Html.BeginForm("Create", "Product", FormMethod.Post)) { 
-    
-    }
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.ProductName)
+        @*<input type="text" name="ProductName" />
+            <input type="checkbox" name="Discontinued" />@:Discontinuado*@
 
+        <br />
+        @Html.EditorFor(m => m.ProductName, new
+   {
+       htmlAttributes = new
+       {
+           @class = "Names",
+                placeholder = "Proporciona el nombre"
+       }
+   });
+        
+
+    }
+    <br>
+    @Html.LabelFor(m=>m.Discontinued)
+    @Html.EditorFor(m=>m.Discontinued)
+    <br />
+
+    @Html.EditorFor(m=>m.ProductID)
 </body>
 </html>

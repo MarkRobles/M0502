@@ -30,6 +30,9 @@ namespace M0502.Controllers
         public ActionResult Create()
         {
             var Product = new Models.Product();
+
+            Product.ProductName = "Azucar";
+            Product.Discontinued = true;
             return View(Product);
         }
 

@@ -14,6 +14,8 @@
 <body>
     <div> 
         @using (Html.BeginForm("UploadPhoto", "Category",FormMethod.Post,new { enctype="multipart/form-data"})) {
+            <textarea name="Description"  rows="20" cols="80"></textarea>
+
             <input  type="file" name="file"/>
             /*Controles para leer los demas datos de la categoria*/
         <input type="submit" value="OK"> 
