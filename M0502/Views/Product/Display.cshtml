@@ -13,7 +13,17 @@
 </head>
 <body>
     <h3>Producto:@Model.ProductName</h3>
-    <div> 
+    <div>
+        @Html.DisplayNameFor(m => m.ProductName)
+    </div>
+    <div>
+        @Html.DisplayFor(m => m.ProductName)
+    </div>
+    <div>
+        @Html.DisplayNameFor(m => m.UnitPrice)
+    </div>
+    <div>
+        @Html.DisplayFor(m => m.UnitPrice)
     </div>
 </body>
 </html>
