@@ -24,5 +24,36 @@ namespace M0502.Controllers
 
             return View(Producto);
         }
+
+
+
+        public ActionResult Create()
+        {
+            var Product = new Models.Product();
+            return View(Product);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Product newProduct)
+        {
+            ActionResult Result = View(newProduct);
+
+            if (ModelState.IsValid)
+            {
+                using (var Contex = new Models.NORTHWNDEntities())
+                {
+                    Contex.Products.Add(newProduct);
+                    Contex.SaveChanges();
+                    Result = RedirectToAction("Display", new { id = newProduct.ProductID });
+                    
+                }
+            }
+            else
+            {
+
+            }
+            return Result;
+        }
+
     }
 }
